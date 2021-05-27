@@ -1,12 +1,13 @@
 package countdowncalc
 
 // Calculates a total paydown period in months.
-func CalculatePaydownPeriod(balance float32, monthlyPayment float32, interest float32) int32 {
+func CalculatePaydownPeriod(balance float64, monthlyPayment float64, interest float64) int32 {
 	var paydownPeriod int32
 	remainingBalance := balance
+	monthlyInterest := interest / 12
 
 	for remainingBalance > 0 {
-		balanceWithInterest := (remainingBalance + remainingBalance*interest)
+		balanceWithInterest := (remainingBalance + remainingBalance*monthlyInterest)
 
 		remainingBalance = balanceWithInterest
 		remainingBalance -= monthlyPayment

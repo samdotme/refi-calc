@@ -31,7 +31,7 @@ func TestPaydownIsTwoWhenBalanceIsSameAsPaydownRateWithInterest(t *testing.T) {
 func TestInterestCompounds(t *testing.T) {
 	months := CalculatePaydownPeriod(100, 30, .1)
 
-	if months != 5 {
-		t.Fatalf(`Failed to take into account compounding of interest. Expected 12, returned %v`, months)
+	if months != 4 {
+		t.Fatalf(`Failed to take into account compounding of interest. Expected 4, returned %v`, months)
 	}
 }
